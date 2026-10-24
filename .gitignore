@@ -1,0 +1,6 @@
+config.json
+.mcp.json
+outlook_token_cache.json
+.venv/
+__pycache__/
+*.pyc

@@ -1,0 +1,23 @@
+{
+  "accounts": [
+    {
+      "id": "qq",
+      "name": "QQ邮箱",
+      "type": "imap",
+      "host": "imap.qq.com",
+      "port": 993,
+      "use_ssl": true,
+      "username": "你的QQ号@qq.com",
+      "password": "在这里填QQ邮箱的授权码，不是QQ密码"
+    },
+    {
+      "id": "school",
+      "name": "学校 Outlook",
+      "type": "outlook",
+      "username": "你的学校邮箱地址",
+      "client_id": "在 Azure 注册应用后得到的 client ID",
+      "tenant": "common",
+      "token_cache": "outlook_token_cache.json"
+    }
+  ]
+}
