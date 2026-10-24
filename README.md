@@ -1,6 +1,6 @@
 # 邮箱 Agent 插件（Email MCP）
 
-让 **Claude Code** 自动登录并读取你的邮箱，把邮件里的**要求 / 待办事项**总结反馈给你。挂上插件后，说一句「看看邮箱有什么新邮件」，它就会去读邮件、再告诉你需要做什么。
+让 **Claude Code** 自动登录并读取你的邮箱，把邮件里的**要求 / 待办事项**总结反馈给你；也提供**不需要 Claude Code 的独立命令行版**（`mailbox.py`）直接读邮件。挂上插件后，说一句「看看邮箱有什么新邮件」，它就会去读邮件、再告诉你需要做什么。
 
 ---
 
@@ -14,7 +14,10 @@ python -m venv .venv
 # 第 2 步：运行配置向导，照提示填写你的邮箱
 .venv\Scripts\python setup.py
 
-# 第 3 步：用 Claude Code 打开本文件夹，对它说「看看邮箱」
+第 3 步，选一种用法：
+
+- **独立命令行版（不需要 Claude Code）**：双击 `mailbox.bat`，或运行 `python mailbox.py`，直接列出 / 读 / 搜邮件。
+- **Claude Code 插件版**：用 Claude Code 打开本文件夹，对它说「看看邮箱」。
 ```
 
 > 不用手动改 config.json —— 向导会自动生成。手动填写的详细说明见下文各章节。
@@ -44,6 +47,8 @@ Agent邮箱/
 ├── login_outlook.py     # Outlook 授权脚本（备用）
 ├── setup.py             # 一键配置向导（引导填写邮箱 → 生成 config.json）
 ├── install.bat          # Windows 一键安装脚本
+├── mailbox.py           # 独立命令行阅读器（不需要 Claude Code）
+├── mailbox.bat          # 双击直接看邮件的快捷方式
 ├── config.json          # 你的邮箱配置（含凭证，已 gitignore）
 ├── config.example.json  # 配置模板
 ├── requirements.txt     # 依赖
@@ -150,6 +155,19 @@ claude mcp add email-mailbox -- .venv\Scripts\python "<你的项目路径>\serve
 ---
 
 ## 六、使用
+
+### 方式一：独立命令行版（不需要 Claude Code）
+
+双击 `mailbox.bat`（或在终端运行 `python mailbox.py`）：
+
+```powershell
+python mailbox.py                 # 列出最近邮件，自动标记 ⚠️需要处理
+python mailbox.py unread          # 只看未读
+python mailbox.py read <邮件ID>    # 读某封邮件全文
+python mailbox.py search <关键词>   # 按主题/发件人搜索
+```
+
+### 方式二：Claude Code 插件版
 
 对 Claude 说下面这些话即可：
 

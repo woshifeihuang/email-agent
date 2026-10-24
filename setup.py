@@ -129,8 +129,9 @@ def main():
 
     print("\n" + "=" * 60)
     print(f"✅ 配置完成！已写入 config.json（共 {len(accounts)} 个邮箱）和 .mcp.json")
-    print("下一步：用 Claude Code 打开本文件夹，对它说")
-    print('  「看看邮箱有什么新邮件」即可。')
+    print("现在有两种用法：")
+    print("  1) 不需要 Claude Code：双击 mailbox.bat（或 python mailbox.py）直接看邮件")
+    print("  2) 用 Claude Code：打开本文件夹，对它说「看看邮箱」")
     print("=" * 60)
 
 
